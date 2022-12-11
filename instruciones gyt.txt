@@ -1,0 +1,13 @@
+ps -ax | grep ssh-agent | grep -v grep
+
+ps -fea | grep ssh-agent | grep -v grep
+
+para levantar el agente
+ eval $(ssh-agent -s)
+ 
+vincula la clave publica con la privada
+ ssh-add ~/.ssh/id_ed25519
+ 
+ # Copia el contenido de la clave en el portapapeles
+ clip < ~/.ssh/id_ed25519.pub
+ 
